@@ -1,7 +1,7 @@
 package brickBreaker.ai;
 
-import brickBreaker.board.Board;
 import brickBreaker.board.ReadOnlyBoard;
+import brickBreaker.board.ReadWriteBoard;
 import utils.IntVector2D;
 
 import java.util.*;
@@ -34,7 +34,7 @@ public abstract class AI {
      * @param board const board to check
      * @return true if current board cannot win, false if unknown
      */
-    static boolean unWinnable(Board board) {
+    static boolean unWinnable(ReadOnlyBoard board) {
         if (failIfTrueChecks.stream().anyMatch(checker -> checker.test(board))) {
             return true;
         }
@@ -51,7 +51,7 @@ public abstract class AI {
      * @param board board to evaluate
      * @return shortest list of all unique moves
      */
-    static Set<IntVector2D> getAllPossibleMoves(Board board) {
+    static Set<IntVector2D> getAllPossibleMoves(ReadOnlyBoard board) {
         return getAllPossibleMovesMap(board).keySet();
     }
 
@@ -61,7 +61,7 @@ public abstract class AI {
      * @param board board to check
      * @return shortest list of all unique moves and their scores
      */
-    static Map<IntVector2D, Integer> getAllPossibleMovesMap(Board board) {
+    static Map<IntVector2D, Integer> getAllPossibleMovesMap(ReadOnlyBoard board) {
         Set<IntVector2D> consideredPositions = new HashSet<>();
         Map<IntVector2D, Integer> possibleMoves = new HashMap<>();
         board.getCurrentBoardPositions()
@@ -77,5 +77,5 @@ public abstract class AI {
         return possibleMoves;
     }
 
-    public abstract List<IntVector2D> getWinningMoveSet(Board board);
+    public abstract List<IntVector2D> getWinningMoveSet(ReadWriteBoard board);
 }

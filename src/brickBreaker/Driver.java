@@ -3,7 +3,9 @@ package brickBreaker;
 import brickBreaker.ai.AI;
 import brickBreaker.ai.QuickAI;
 import brickBreaker.board.Board;
+import brickBreaker.board.CachedBoard;
 import brickBreaker.board.Color;
+import brickBreaker.board.ReadWriteBoard;
 import utils.IntVector2D;
 
 import javax.imageio.ImageIO;
@@ -19,13 +21,13 @@ import java.util.List;
 @SuppressWarnings({"SameParameterValue", "unused"})
 public class Driver {
 
-    private static Board getBoardFromString(String str) {
+    private static ReadWriteBoard getBoardFromString(String str) {
         Board board = new Board();
         board.generate(str);
         return board;
     }
 
-    private static Board getStaticBoard() {
+    private static ReadWriteBoard getStaticBoard() {
         return getBoardFromString("" +
                 "GYYRGRGGGY\n" +
                 "RRGRGYGGYR\n" +
@@ -39,7 +41,7 @@ public class Driver {
                 "RGYGRYGGGY");
     }
 
-    private static Board getRandomBoard() {
+    private static ReadWriteBoard getRandomBoard() {
         Board board = new Board();
         board.generate(10, 10);
         return board;
@@ -56,7 +58,7 @@ public class Driver {
      * @return generated board
      * @throws IOException if there is an error loading the image
      */
-    private static Board getBoardFromImage(String path, int width, int height) throws IOException {
+    private static ReadWriteBoard getBoardFromImage(String path, int width, int height) throws IOException {
         BufferedImage img = ImageIO.read(new File(path));
         StringBuilder boardStr = new StringBuilder((width + 1) * height);
         int cellWidth = img.getWidth() / width;
@@ -84,7 +86,7 @@ public class Driver {
      * @param board game board
      * @param ai    ai implementation
      */
-    private static void playGame(Board board, AI ai) {
+    private static void playGame(ReadWriteBoard board, AI ai) {
         System.out.println(board.getBoardString());
         List<IntVector2D> winningMoves = ai.getWinningMoveSet(board);
         int score = 0;
@@ -98,7 +100,7 @@ public class Driver {
 
     public static void main(String... args) throws IOException {
         AI ai = new QuickAI();
-        Board board;
+        ReadWriteBoard board;
 
         //board = getRandomBoard();
         //board = getStaticBoard();
@@ -124,6 +126,7 @@ public class Driver {
                 "PPYYYYYGI " +
                 "");
         //*/
+        board = new CachedBoard(board);
         playGame(board, ai);
     }
 }

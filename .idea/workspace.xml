@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c57b4fc-953b-4185-9288-6e2cd84e4b2a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BrickBreaker/ai/QuickAI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BrickBreaker/ai/SmartestAI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BrickBreaker/board/ReadOnlyBoard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/brickBreaker/board/ReadWriteBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/BrickBreaker/AI.java" afterPath="$PROJECT_DIR$/src/brickBreaker/ai/AI.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/BrickBreaker/Board.java" afterPath="$PROJECT_DIR$/src/brickBreaker/board/Board.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/BrickBreaker/Color.java" afterPath="$PROJECT_DIR$/src/BrickBreaker/board/Color.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/BrickBreaker/Driver.java" afterPath="$PROJECT_DIR$/src/brickBreaker/Driver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/brickBreaker/board/CachedBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickBreaker/Driver.java" afterPath="$PROJECT_DIR$/src/brickBreaker/Driver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickBreaker/ai/AI.java" afterPath="$PROJECT_DIR$/src/brickBreaker/ai/AI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickBreaker/ai/QuickAI.java" afterPath="$PROJECT_DIR$/src/brickBreaker/ai/QuickAI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickBreaker/ai/SmartestAI.java" afterPath="$PROJECT_DIR$/src/brickBreaker/ai/SmartestAI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickBreaker/board/Board.java" afterPath="$PROJECT_DIR$/src/brickBreaker/board/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickBreaker/board/ReadOnlyBoard.java" afterPath="$PROJECT_DIR$/src/brickBreaker/board/ReadOnlyBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickBreaker/board/ReadWriteBoard.java" afterPath="$PROJECT_DIR$/src/brickBreaker/board/ReadWriteBoard.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,35 +41,32 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="194" column="5" lean-forward="false" selection-start-line="194" selection-start-column="5" selection-end-line="194" selection-end-column="5" />
+            <state relative-caret-position="306">
+              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CachedBoard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/CachedBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="22" />
               <folding>
-                <element signature="docComment;class#Board#0" expanded="false" />
-                <element signature="docComment;field#matchDirections#0;class#Board#0" expanded="false" />
-                <element signature="e#769#770#0" expanded="false" />
-                <element signature="e#803#804#0" expanded="false" />
-                <element signature="method#setColor#0;class#Board#0" expanded="false" />
-                <element signature="method#getCurrentBoardPositions#0;class#Board#0" expanded="false" />
-                <element signature="e#1780#1816#0" expanded="false" />
-                <element signature="method#generate#0;class#Board#0" expanded="false" />
-                <element signature="method#generate#1;class#Board#0" expanded="false" />
-                <element signature="method#cellNeighbors#0;class#Board#0" expanded="false" />
-                <element signature="method#cellNeighborsWithSameColor#0;class#Board#0" expanded="false" />
-                <element signature="method#getSameColoredGroup_#0;class#Board#0" expanded="false" />
-                <element signature="method#getSameColoredGroup#0;class#Board#0" expanded="false" />
-                <element signature="method#popCell#0;class#Board#0" expanded="false" />
-                <element signature="e#5004#5005#0" expanded="false" />
-                <element signature="e#5050#5051#0" expanded="false" />
-                <element signature="method#removeCells#1;class#Board#0" expanded="false" />
-                <element signature="method#getBoardString#0;class#Board#0" expanded="false" />
-                <element signature="e#6121#6122#0" expanded="false" />
-                <element signature="e#6160#6161#0" expanded="false" />
-                <element signature="e#6871#6872#0" expanded="false" />
-                <element signature="e#6912#6913#0" expanded="false" />
-                <element signature="docComment;class#Cache#0;class#Board#0" expanded="false" />
-                <element signature="class#Cache#0;class#Board#0" expanded="false" />
-                <element signature="e#7254#7255#0" expanded="false" />
-                <element signature="e#7309#7310#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#423#424#0" expanded="true" />
+                <element signature="e#640#641#0" expanded="true" />
+                <element signature="e#683#684#0" expanded="true" />
+                <element signature="e#729#730#0" expanded="true" />
+                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#835#836#0" expanded="true" />
+                <element signature="e#885#886#0" expanded="true" />
+                <element signature="e#960#961#0" expanded="true" />
+                <element signature="e#1018#1019#0" expanded="true" />
+                <element signature="e#1282#1283#0" expanded="true" />
+                <element signature="e#1330#1331#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,9 +75,11 @@
       <file leaf-file-name="ReadWriteBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/ReadWriteBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+              <folding>
+                <element signature="docComment;method#duplicate#0;class#ReadWriteBoard#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,8 +87,8 @@
       <file leaf-file-name="ReadOnlyBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/ReadOnlyBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+            <state relative-caret-position="255">
+              <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,11 +99,15 @@
       <file leaf-file-name="AI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/brickBreaker/ai/AI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="79" column="69" lean-forward="false" selection-start-line="79" selection-start-column="69" selection-end-line="79" selection-end-column="69" />
+            <state relative-caret-position="208">
+              <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
               <folding>
                 <element signature="docComment;class#AI#0" expanded="false" />
+                <element signature="docComment;method#unWinnable#0;class#AI#0" expanded="false" />
                 <element signature="method#unWinnable#0;class#AI#0" expanded="false" />
+                <element signature="docComment;method#getAllPossibleMoves#0;class#AI#0" expanded="false" />
+                <element signature="docComment;method#getAllPossibleMovesMap#0;class#AI#0" expanded="false" />
+                <element signature="method#getAllPossibleMovesMap#0;class#AI#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -124,44 +126,48 @@
       <file leaf-file-name="SmartestAI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/brickBreaker/ai/SmartestAI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="136">
+              <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+              <folding>
+                <element signature="docComment;class#SmartestAI#0" expanded="false" />
+                <element signature="method#getWinningMoveSet#0;class#SmartestAI#0" expanded="false" />
+                <element signature="method#getMaxMoveScore#0;class#SmartestAI#0" expanded="false" />
+                <element signature="method#getMaxMoveScore#1;class#SmartestAI#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuickAI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QuickAI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/brickBreaker/ai/QuickAI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+            <state relative-caret-position="153">
+              <caret line="24" column="94" lean-forward="false" selection-start-line="24" selection-start-column="94" selection-end-line="24" selection-end-column="94" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#QuickAI#0" expanded="false" />
+                <element signature="method#getWinningMoveSet#0;class#QuickAI#0" expanded="false" />
+                <element signature="method#getWinningMoveSet#1;class#QuickAI#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/brickBreaker/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+            <state relative-caret-position="170">
+              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding>
-                <element signature="e#449#500#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyStringUtilsTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/utils/MyStringUtilsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="docComment;class#Driver#0" expanded="false" />
+                <element signature="method#getBoardFromString#0;class#Driver#0" expanded="false" />
+                <element signature="method#getStaticBoard#0;class#Driver#0" expanded="false" />
+                <element signature="method#getRandomBoard#0;class#Driver#0" expanded="false" />
+                <element signature="docComment;method#getBoardFromImage#0;class#Driver#0" expanded="false" />
+                <element signature="method#getBoardFromImage#0;class#Driver#0" expanded="false" />
+                <element signature="docComment;method#playGame#0;class#Driver#0" expanded="false" />
+                <element signature="method#playGame#0;class#Driver#0" expanded="false" />
+                <element signature="method#main#0;class#Driver#0" expanded="false" />
+                <element signature="e#3783#3810#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -179,8 +185,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>generate</find>
-      <find>pop</find>
+      <find>isEm</find>
       <find>Board board</find>
+      <find>pop</find>
     </findStrings>
     <replaceStrings>
       <replace>ReadWriteBoard board</replace>
@@ -212,6 +219,13 @@
         <option value="$PROJECT_DIR$/src/BrickBreaker/board/Board.java" />
         <option value="$PROJECT_DIR$/src/BrickBreaker/ai/SmartestAI.java" />
         <option value="$PROJECT_DIR$/src/brickBreaker/ai/QuickAI.java" />
+        <option value="$PROJECT_DIR$/src/brickBreaker/board/ReadOnlyBoard.java" />
+        <option value="$PROJECT_DIR$/src/brickBreaker/ai/SmartestAI.java" />
+        <option value="$PROJECT_DIR$/src/brickBreaker/ai/AI.java" />
+        <option value="$PROJECT_DIR$/src/brickBreaker/board/ReadWriteBoard.java" />
+        <option value="$PROJECT_DIR$/src/brickBreaker/board/Board.java" />
+        <option value="$PROJECT_DIR$/src/brickBreaker/board/CachedBoard.java" />
+        <option value="$PROJECT_DIR$/src/brickBreaker/Driver.java" />
       </list>
     </option>
   </component>
@@ -666,7 +680,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -685,10 +699,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -700,6 +714,24 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -725,34 +757,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Board#0" expanded="false" />
-            <element signature="docComment;field#matchDirections#0;class#Board#0" expanded="false" />
-            <element signature="e#769#770#0" expanded="false" />
-            <element signature="e#803#804#0" expanded="false" />
-            <element signature="method#setColor#0;class#Board#0" expanded="false" />
-            <element signature="method#getCurrentBoardPositions#0;class#Board#0" expanded="false" />
-            <element signature="e#1780#1816#0" expanded="false" />
-            <element signature="method#generate#0;class#Board#0" expanded="false" />
-            <element signature="method#generate#1;class#Board#0" expanded="false" />
-            <element signature="method#cellNeighbors#0;class#Board#0" expanded="false" />
-            <element signature="method#cellNeighborsWithSameColor#0;class#Board#0" expanded="false" />
-            <element signature="method#getSameColoredGroup_#0;class#Board#0" expanded="false" />
-            <element signature="method#getSameColoredGroup#0;class#Board#0" expanded="false" />
-            <element signature="method#popCell#0;class#Board#0" expanded="false" />
-            <element signature="e#5004#5005#0" expanded="false" />
-            <element signature="e#5050#5051#0" expanded="false" />
-            <element signature="method#removeCells#1;class#Board#0" expanded="false" />
-            <element signature="method#getBoardString#0;class#Board#0" expanded="false" />
-            <element signature="e#6121#6122#0" expanded="false" />
-            <element signature="e#6160#6161#0" expanded="false" />
-            <element signature="e#6871#6872#0" expanded="false" />
-            <element signature="e#6912#6913#0" expanded="false" />
-            <element signature="docComment;class#Cache#0;class#Board#0" expanded="false" />
-            <element signature="class#Cache#0;class#Board#0" expanded="false" />
-            <element signature="e#7254#7255#0" expanded="false" />
-            <element signature="e#7309#7310#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +767,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#AI#0" expanded="false" />
+            <element signature="docComment;method#unWinnable#0;class#AI#0" expanded="false" />
             <element signature="method#unWinnable#0;class#AI#0" expanded="false" />
+            <element signature="docComment;method#getAllPossibleMoves#0;class#AI#0" expanded="false" />
+            <element signature="docComment;method#getAllPossibleMovesMap#0;class#AI#0" expanded="false" />
+            <element signature="method#getAllPossibleMovesMap#0;class#AI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -772,7 +781,16 @@
         <state relative-caret-position="510">
           <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
           <folding>
-            <element signature="e#449#500#0" expanded="true" />
+            <element signature="docComment;class#Driver#0" expanded="false" />
+            <element signature="method#getBoardFromString#0;class#Driver#0" expanded="false" />
+            <element signature="method#getStaticBoard#0;class#Driver#0" expanded="false" />
+            <element signature="method#getRandomBoard#0;class#Driver#0" expanded="false" />
+            <element signature="docComment;method#getBoardFromImage#0;class#Driver#0" expanded="false" />
+            <element signature="method#getBoardFromImage#0;class#Driver#0" expanded="false" />
+            <element signature="docComment;method#playGame#0;class#Driver#0" expanded="false" />
+            <element signature="method#playGame#0;class#Driver#0" expanded="false" />
+            <element signature="method#main#0;class#Driver#0" expanded="false" />
+            <element signature="e#3783#3810#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -833,34 +851,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Board#0" expanded="false" />
-            <element signature="docComment;field#matchDirections#0;class#Board#0" expanded="false" />
-            <element signature="e#769#770#0" expanded="false" />
-            <element signature="e#803#804#0" expanded="false" />
-            <element signature="method#setColor#0;class#Board#0" expanded="false" />
-            <element signature="method#getCurrentBoardPositions#0;class#Board#0" expanded="false" />
-            <element signature="e#1780#1816#0" expanded="false" />
-            <element signature="method#generate#0;class#Board#0" expanded="false" />
-            <element signature="method#generate#1;class#Board#0" expanded="false" />
-            <element signature="method#cellNeighbors#0;class#Board#0" expanded="false" />
-            <element signature="method#cellNeighborsWithSameColor#0;class#Board#0" expanded="false" />
-            <element signature="method#getSameColoredGroup_#0;class#Board#0" expanded="false" />
-            <element signature="method#getSameColoredGroup#0;class#Board#0" expanded="false" />
-            <element signature="method#popCell#0;class#Board#0" expanded="false" />
-            <element signature="e#5004#5005#0" expanded="false" />
-            <element signature="e#5050#5051#0" expanded="false" />
-            <element signature="method#removeCells#1;class#Board#0" expanded="false" />
-            <element signature="method#getBoardString#0;class#Board#0" expanded="false" />
-            <element signature="e#6121#6122#0" expanded="false" />
-            <element signature="e#6160#6161#0" expanded="false" />
-            <element signature="e#6871#6872#0" expanded="false" />
-            <element signature="e#6912#6913#0" expanded="false" />
-            <element signature="docComment;class#Cache#0;class#Board#0" expanded="false" />
-            <element signature="class#Cache#0;class#Board#0" expanded="false" />
-            <element signature="e#7254#7255#0" expanded="false" />
-            <element signature="e#7309#7310#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -870,7 +861,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#AI#0" expanded="false" />
+            <element signature="docComment;method#unWinnable#0;class#AI#0" expanded="false" />
             <element signature="method#unWinnable#0;class#AI#0" expanded="false" />
+            <element signature="docComment;method#getAllPossibleMoves#0;class#AI#0" expanded="false" />
+            <element signature="docComment;method#getAllPossibleMovesMap#0;class#AI#0" expanded="false" />
+            <element signature="method#getAllPossibleMovesMap#0;class#AI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -880,7 +875,16 @@
         <state relative-caret-position="510">
           <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
           <folding>
-            <element signature="e#449#500#0" expanded="true" />
+            <element signature="docComment;class#Driver#0" expanded="false" />
+            <element signature="method#getBoardFromString#0;class#Driver#0" expanded="false" />
+            <element signature="method#getStaticBoard#0;class#Driver#0" expanded="false" />
+            <element signature="method#getRandomBoard#0;class#Driver#0" expanded="false" />
+            <element signature="docComment;method#getBoardFromImage#0;class#Driver#0" expanded="false" />
+            <element signature="method#getBoardFromImage#0;class#Driver#0" expanded="false" />
+            <element signature="docComment;method#playGame#0;class#Driver#0" expanded="false" />
+            <element signature="method#playGame#0;class#Driver#0" expanded="false" />
+            <element signature="method#main#0;class#Driver#0" expanded="false" />
+            <element signature="e#3783#3810#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -990,94 +994,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/brickBreaker/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding>
-            <element signature="e#449#500#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/ReadWriteBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/ReadOnlyBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/brickBreaker/ai/AI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="79" column="69" lean-forward="false" selection-start-line="79" selection-start-column="69" selection-end-line="79" selection-end-column="69" />
+        <state relative-caret-position="208">
+          <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
           <folding>
             <element signature="docComment;class#AI#0" expanded="false" />
+            <element signature="docComment;method#unWinnable#0;class#AI#0" expanded="false" />
             <element signature="method#unWinnable#0;class#AI#0" expanded="false" />
+            <element signature="docComment;method#getAllPossibleMoves#0;class#AI#0" expanded="false" />
+            <element signature="docComment;method#getAllPossibleMovesMap#0;class#AI#0" expanded="false" />
+            <element signature="method#getAllPossibleMovesMap#0;class#AI#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/brickBreaker/ai/QuickAI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="194" column="5" lean-forward="false" selection-start-line="194" selection-start-column="5" selection-end-line="194" selection-end-column="5" />
+        <state relative-caret-position="153">
+          <caret line="24" column="94" lean-forward="false" selection-start-line="24" selection-start-column="94" selection-end-line="24" selection-end-column="94" />
           <folding>
-            <element signature="docComment;class#Board#0" expanded="false" />
-            <element signature="docComment;field#matchDirections#0;class#Board#0" expanded="false" />
-            <element signature="e#769#770#0" expanded="false" />
-            <element signature="e#803#804#0" expanded="false" />
-            <element signature="method#setColor#0;class#Board#0" expanded="false" />
-            <element signature="method#getCurrentBoardPositions#0;class#Board#0" expanded="false" />
-            <element signature="e#1780#1816#0" expanded="false" />
-            <element signature="method#generate#0;class#Board#0" expanded="false" />
-            <element signature="method#generate#1;class#Board#0" expanded="false" />
-            <element signature="method#cellNeighbors#0;class#Board#0" expanded="false" />
-            <element signature="method#cellNeighborsWithSameColor#0;class#Board#0" expanded="false" />
-            <element signature="method#getSameColoredGroup_#0;class#Board#0" expanded="false" />
-            <element signature="method#getSameColoredGroup#0;class#Board#0" expanded="false" />
-            <element signature="method#popCell#0;class#Board#0" expanded="false" />
-            <element signature="e#5004#5005#0" expanded="false" />
-            <element signature="e#5050#5051#0" expanded="false" />
-            <element signature="method#removeCells#1;class#Board#0" expanded="false" />
-            <element signature="method#getBoardString#0;class#Board#0" expanded="false" />
-            <element signature="e#6121#6122#0" expanded="false" />
-            <element signature="e#6160#6161#0" expanded="false" />
-            <element signature="e#6871#6872#0" expanded="false" />
-            <element signature="e#6912#6913#0" expanded="false" />
-            <element signature="docComment;class#Cache#0;class#Board#0" expanded="false" />
-            <element signature="class#Cache#0;class#Board#0" expanded="false" />
-            <element signature="e#7254#7255#0" expanded="false" />
-            <element signature="e#7309#7310#0" expanded="false" />
+            <element signature="docComment;class#QuickAI#0" expanded="false" />
+            <element signature="method#getWinningMoveSet#0;class#QuickAI#0" expanded="false" />
+            <element signature="method#getWinningMoveSet#1;class#QuickAI#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/brickBreaker/ai/SmartestAI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        <state relative-caret-position="136">
+          <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+          <folding>
+            <element signature="docComment;class#SmartestAI#0" expanded="false" />
+            <element signature="method#getWinningMoveSet#0;class#SmartestAI#0" expanded="false" />
+            <element signature="method#getMaxMoveScore#0;class#SmartestAI#0" expanded="false" />
+            <element signature="method#getMaxMoveScore#1;class#SmartestAI#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/ReadWriteBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+          <folding>
+            <element signature="docComment;method#duplicate#0;class#ReadWriteBoard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/ReadOnlyBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/brickBreaker/ai/QuickAI.java">
+    <entry file="file://$PROJECT_DIR$/src/brickBreaker/board/CachedBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        <state relative-caret-position="188">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#640#641#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#960#961#0" expanded="true" />
+            <element signature="e#1018#1019#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+            <element signature="e#1330#1331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/brickBreaker/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#Driver#0" expanded="false" />
+            <element signature="method#getBoardFromString#0;class#Driver#0" expanded="false" />
+            <element signature="method#getStaticBoard#0;class#Driver#0" expanded="false" />
+            <element signature="method#getRandomBoard#0;class#Driver#0" expanded="false" />
+            <element signature="docComment;method#getBoardFromImage#0;class#Driver#0" expanded="false" />
+            <element signature="method#getBoardFromImage#0;class#Driver#0" expanded="false" />
+            <element signature="docComment;method#playGame#0;class#Driver#0" expanded="false" />
+            <element signature="method#playGame#0;class#Driver#0" expanded="false" />
+            <element signature="method#main#0;class#Driver#0" expanded="false" />
+            <element signature="e#3783#3810#0" expanded="false" />
           </folding>
         </state>
       </provider>

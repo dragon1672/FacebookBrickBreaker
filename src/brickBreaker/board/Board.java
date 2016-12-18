@@ -22,13 +22,8 @@ public class Board implements ReadWriteBoard {
             IntVector2D.create(0, -1),
             IntVector2D.create(0, 1)
     );
-    private Cache cache = new Cache();
     // column then row
     private List<List<Color>> backbone = new ArrayList<>();
-
-    private void invalidateCache() {
-        cache.invalidate();
-    }
 
     private boolean validPosition(IntVector2D position) {
         return 0 <= position.X() && position.X() < backbone.size()
@@ -108,7 +103,8 @@ public class Board implements ReadWriteBoard {
                 .filter(toCheck -> getColor(toCheck).equals(toMatch));
     }
 
-    private Set<IntVector2D> getSameColoredGroup_(IntVector2D startingPosition) {
+   @Override
+    public Set<IntVector2D> getSameColoredGroup(IntVector2D startingPosition) {
         Set<IntVector2D> matchedNeighbors = new HashSet<>();
         Q<IntVector2D> toVisit = new Q<>();
         toVisit.add(startingPosition);
@@ -120,11 +116,6 @@ public class Board implements ReadWriteBoard {
                     .forEach(toVisit::add);
         }
         return matchedNeighbors;
-    }
-
-    @Override
-    public Set<IntVector2D> getSameColoredGroup(IntVector2D startingPosition) {
-        return cache.getSameColoredNeighbors.computeIfAbsent(startingPosition, this::getSameColoredGroup_);
     }
 
     @Override
@@ -148,7 +139,6 @@ public class Board implements ReadWriteBoard {
                 backbone.remove(i);
             }
         }
-        invalidateCache();
     }
 
     @Override
@@ -171,12 +161,8 @@ public class Board implements ReadWriteBoard {
         return getBoardString();
     }
 
-    /**
-     * Create a copy of the current board without changing internal state
-     *
-     * @return copy of current board
-     */
-    public Board duplicate() {
+    @Override
+    public ReadWriteBoard duplicate() {
         // TODO make this part of one of the interfaces
         // I'm super surprised how little this method impacted performance, turns out to be very cheap
         Board ret = new Board();
@@ -190,20 +176,8 @@ public class Board implements ReadWriteBoard {
         return ret;
     }
 
+    @Override
     public boolean isEmpty() {
         return backbone.isEmpty();
-    }
-
-    /**
-     * Performance help maybe
-     */
-    class Cache {
-        // This is called multiple times by the current AIs so lets optimize the load
-        // This is also the method taking up the most time during execution
-        Map<IntVector2D, Set<IntVector2D>> getSameColoredNeighbors = new HashMap<>();
-
-        void invalidate() {
-            getSameColoredNeighbors.clear();
-        }
     }
 }

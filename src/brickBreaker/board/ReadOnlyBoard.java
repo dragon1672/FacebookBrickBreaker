@@ -9,6 +9,12 @@ import java.util.stream.Stream;
  * Actions that do not edit board state
  */
 public interface ReadOnlyBoard {
+
+    /**
+     * @return true if the board has no values
+     */
+    boolean isEmpty();
+
     /**
      * Get the board color at given position
      *

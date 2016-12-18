@@ -1,6 +1,6 @@
 package brickBreaker.ai;
 
-import brickBreaker.board.Board;
+import brickBreaker.board.ReadWriteBoard;
 import utils.IntVector2D;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Stack;
  */
 public class QuickAI extends AI {
     @Override
-    public List<IntVector2D> getWinningMoveSet(Board board) {
+    public List<IntVector2D> getWinningMoveSet(ReadWriteBoard board) {
         Stack<IntVector2D> winningMoveSet = new Stack<>();
         if (getWinningMoveSet(board, winningMoveSet)) {
             return winningMoveSet;
@@ -22,7 +22,7 @@ public class QuickAI extends AI {
         throw new IllegalArgumentException("provided board is unsolvable");
     }
 
-    private boolean getWinningMoveSet(Board boardToUse, Stack<IntVector2D> moveList) {
+    private boolean getWinningMoveSet(ReadWriteBoard boardToUse, Stack<IntVector2D> moveList) {
         if (boardToUse.isEmpty()) {
             return true;
         }
@@ -33,7 +33,7 @@ public class QuickAI extends AI {
         return possibleMoves.keySet().stream()
                 .sorted((o1, o2) -> possibleMoves.get(o2) - possibleMoves.get(o1))
                 .map(move -> {
-                    Board dup = boardToUse.duplicate();
+                    ReadWriteBoard dup = boardToUse.duplicate();
                     dup.popCell(move);
                     if (getWinningMoveSet(dup, moveList)) {
                         moveList.insertElementAt(move, 0);
