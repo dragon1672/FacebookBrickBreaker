@@ -27,11 +27,6 @@ public class CachedBoard implements PlayableBoard {
     }
 
     @Override
-    public PlayableBoard duplicate() {
-        return backbone.duplicate();
-    }
-
-    @Override
     public boolean isEmpty() {
         return backbone.isEmpty();
     }

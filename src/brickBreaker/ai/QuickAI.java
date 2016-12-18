@@ -1,5 +1,6 @@
 package brickBreaker.ai;
 
+import brickBreaker.board.BoardDuplicator;
 import brickBreaker.board.PlayableBoard;
 import utils.IntVector2D;
 
@@ -33,7 +34,7 @@ public class QuickAI extends AI {
         return possibleMoves.keySet().stream()
                 .sorted((o1, o2) -> possibleMoves.get(o2) - possibleMoves.get(o1))
                 .map(move -> {
-                    PlayableBoard dup = boardToUse.duplicate();
+                    PlayableBoard dup = BoardDuplicator.duplicate(boardToUse);
                     dup.popCell(move);
                     if (getWinningMoveSet(dup, moveList)) {
                         moveList.insertElementAt(move, 0);

@@ -94,6 +94,13 @@ public class BoardGenerator {
         return new BoardImpl(backbone);
     }
 
+    /**
+     * Reset board generation to provided string representation
+     * @param board string representation of the board
+     * @throws IllegalArgumentException if string is corrupt, usually with an indexing error.
+     * @return builder pattern instance of same BoardGenerator called
+     */
+    @SuppressWarnings({"unused","WeakerAccess","SameParameterValue"})
     public BoardGenerator generateFromString(String board) {
         // we will assume a properly formatted string
         int width = board.indexOf('\n') + 1;
@@ -120,6 +127,13 @@ public class BoardGenerator {
         return this;
     }
 
+    /**
+     * Resets the generated board to randomly generated square of provided dimentions
+     * @param width width of board to generate
+     * @param height height of board to generate
+     * @return builder pattern instance of same BoardGenerator called
+     */
+    @SuppressWarnings({"unused","WeakerAccess","SameParameterValue"})
     public BoardGenerator generateRandomBoard(int width, int height) {
         Supplier<List<Color>> randomColumnGenerator = ()->Stream.generate(Color::random)
                 .limit(height)
@@ -132,6 +146,15 @@ public class BoardGenerator {
         return this;
     }
 
+    /**
+     * Generate a board from a given image screenshot from facebook
+     * @param path path to image file
+     * @param width width
+     * @param height height
+     * @return builder pattern instance of same BoardGenerator called
+     * @throws IOException if there are issues loading the image
+     */
+    @SuppressWarnings({"unused","WeakerAccess","SameParameterValue"})
     public BoardGenerator generateFromImage(String path, int width, int height) throws IOException {
         BufferedImage img = ImageIO.read(new File(path));
         StringBuilder boardStr = new StringBuilder((width + 1) * height);

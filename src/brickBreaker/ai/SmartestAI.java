@@ -1,5 +1,6 @@
 package brickBreaker.ai;
 
+import brickBreaker.board.BoardDuplicator;
 import brickBreaker.board.PlayableBoard;
 import com.sun.istack.internal.Nullable;
 import utils.IntVector2D;
@@ -40,7 +41,7 @@ class SmartestAI extends AI {
         Map<Integer, List<IntVector2D>> scoreToMoves = new HashMap<>();
         possibleMoves.parallelStream().forEach(move -> {
             List<IntVector2D> moves = new ArrayList<>();
-            int moveMaxScore = getMaxMoveScore(board.duplicate(), move, moves);
+            int moveMaxScore = getMaxMoveScore(BoardDuplicator.duplicate(board), move, moves);
             if (moveMaxScore > 0) {
                 synchronized (scoreToMoves) {
                     scoreToMoves.put(moveMaxScore, moves);

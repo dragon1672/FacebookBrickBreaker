@@ -25,7 +25,7 @@ public class BoardImpl implements PlayableBoard {
     // column then row
     private List<List<Color>> backbone = new ArrayList<>();
 
-    public BoardImpl(ReadOnlyBoard input) {
+    BoardImpl(ReadOnlyBoard input) {
         for(Iterable<Color> inputColumn : input.getColumns()) {
             List<Color> newColumn = new ArrayList<>();
             backbone.add(newColumn);
@@ -34,7 +34,7 @@ public class BoardImpl implements PlayableBoard {
             }
         }
     }
-    public BoardImpl(List<List<Color>> input) {
+    BoardImpl(List<List<Color>> input) {
         for(Iterable<Color> inputColumn : input) {
             List<Color> newColumn = new ArrayList<>();
             backbone.add(newColumn);
@@ -43,8 +43,6 @@ public class BoardImpl implements PlayableBoard {
             }
         }
     }
-
-    public BoardImpl() {}
 
     private boolean validPosition(IntVector2D position) {
         return 0 <= position.X() && position.X() < backbone.size()
@@ -63,11 +61,6 @@ public class BoardImpl implements PlayableBoard {
     public Color getColor(IntVector2D position) {
         validatePosition(position);
         return backbone.get(position.X()).get(position.Y());
-    }
-
-    private void setColor(IntVector2D pos, Color color) {
-        validatePosition(pos);
-        backbone.get(pos.X()).set(pos.Y(), color);
     }
 
     @Override
@@ -151,13 +144,6 @@ public class BoardImpl implements PlayableBoard {
     @Override
     public String toString() {
         return getBoardString();
-    }
-
-    @Override
-    public PlayableBoard duplicate() {
-        // TODO make this part of one of the interfaces
-        // I'm super surprised how little this method impacted performance, turns out to be very cheap
-        return new BoardImpl(backbone);
     }
 
     @Override
