@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Board Colors
+ * BoardImpl Colors
  */
 public enum Color {
     WHITES_INVALID,

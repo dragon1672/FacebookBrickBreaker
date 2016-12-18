@@ -1,7 +1,7 @@
 package brickBreaker.ai;
 
 import brickBreaker.board.ReadOnlyBoard;
-import brickBreaker.board.ReadWriteBoard;
+import brickBreaker.board.PlayableBoard;
 import utils.IntVector2D;
 
 import java.util.*;
@@ -77,5 +77,5 @@ public abstract class AI {
         return possibleMoves;
     }
 
-    public abstract List<IntVector2D> getWinningMoveSet(ReadWriteBoard board);
+    public abstract List<IntVector2D> getWinningMoveSet(PlayableBoard board);
 }

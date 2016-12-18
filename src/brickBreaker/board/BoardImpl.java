@@ -10,9 +10,9 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * Breaker Game Board
+ * Breaker Game BoardImpl
  */
-public class Board implements ReadWriteBoard {
+public class BoardImpl implements PlayableBoard {
     /**
      * Valid direction to match in (left, right, up, down
      */
@@ -24,6 +24,27 @@ public class Board implements ReadWriteBoard {
     );
     // column then row
     private List<List<Color>> backbone = new ArrayList<>();
+
+    public BoardImpl(ReadOnlyBoard input) {
+        for(Iterable<Color> inputColumn : input.getColumns()) {
+            List<Color> newColumn = new ArrayList<>();
+            backbone.add(newColumn);
+            for(Color color : inputColumn) {
+                newColumn.add(color);
+            }
+        }
+    }
+    public BoardImpl(List<List<Color>> input) {
+        for(Iterable<Color> inputColumn : input) {
+            List<Color> newColumn = new ArrayList<>();
+            backbone.add(newColumn);
+            for(Color color : inputColumn) {
+                newColumn.add(color);
+            }
+        }
+    }
+
+    public BoardImpl() {}
 
     private boolean validPosition(IntVector2D position) {
         return 0 <= position.X() && position.X() < backbone.size()
@@ -57,36 +78,6 @@ public class Board implements ReadWriteBoard {
                 .mapToObj(i -> IntStream.range(0, backbone.get(i).size())
                         .mapToObj(j -> IntVector2D.create(i, j)))
                 .flatMap(stream -> stream);
-    }
-
-    // TODO: move this logic out of board
-    public void generate(int width, int height) {
-        backbone.clear();
-        for (int i = 0; i < width; i++) {
-            backbone.add(Stream.generate(Color::random).limit(height).collect(Collectors.toList()));
-        }
-    }
-
-    //TODO: move this logic out of board
-    public void generate(String board) {
-        // we will assume a properly formatted string
-        int width = board.indexOf('\n');
-        int height = board.length() / width;
-        generate(width, height);
-        for (int i = 0; i < board.length(); i++) {
-            if (board.charAt(i) != '\n') {
-                //the +1s are to accommodate for the the line return character
-                int x = i % (width + 1);
-                int y = height - 1 - (i / (height + 1));
-                IntVector2D pos = IntVector2D.create(x, y);
-
-                char colorSymbol = board.charAt(i);
-                Color color = Color.fromSymbol(colorSymbol);
-
-                this.setColor(pos, color);
-            }
-        }
-        removeCells(getCurrentBoardPositions().filter(pos -> Color.WHITES_INVALID.equals(getColor(pos))));
     }
 
     private Stream<IntVector2D> cellNeighbors(IntVector2D pos) {
@@ -134,11 +125,7 @@ public class Board implements ReadWriteBoard {
     private void removeCells(Stream<IntVector2D> toRemove) {
         toRemove.sorted((o1, o2) -> o2.Y() - o1.Y()) // to not corrupt the positions mid removal
                 .forEach(posToRemove -> backbone.get(posToRemove.X()).remove(posToRemove.Y()));
-        for (int i = backbone.size() - 1; i >= 0; i--) {
-            if (backbone.get(i).size() == 0) {
-                backbone.remove(i);
-            }
-        }
+        backbone.removeIf(List::isEmpty);
     }
 
     @Override
@@ -157,23 +144,20 @@ public class Board implements ReadWriteBoard {
     }
 
     @Override
+    public Iterable<Iterable<Color>> getColumns() {
+        return backbone.stream().collect(Collectors.toList());
+    }
+
+    @Override
     public String toString() {
         return getBoardString();
     }
 
     @Override
-    public ReadWriteBoard duplicate() {
+    public PlayableBoard duplicate() {
         // TODO make this part of one of the interfaces
         // I'm super surprised how little this method impacted performance, turns out to be very cheap
-        Board ret = new Board();
-        ret.backbone = new ArrayList<>();
-        for (int i = 0; i < backbone.size(); i++) {
-            ret.backbone.add(new ArrayList<>());
-            for (int j = 0; j < backbone.get(i).size(); j++) {
-                ret.backbone.get(i).add(backbone.get(i).get(j));
-            }
-        }
-        return ret;
+        return new BoardImpl(backbone);
     }
 
     @Override

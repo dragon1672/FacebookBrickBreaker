@@ -1,6 +1,6 @@
 package brickBreaker.ai;
 
-import brickBreaker.board.ReadWriteBoard;
+import brickBreaker.board.PlayableBoard;
 import com.sun.istack.internal.Nullable;
 import utils.IntVector2D;
 
@@ -13,18 +13,18 @@ import java.util.*;
 @SuppressWarnings("unused")
 class SmartestAI extends AI {
     @Override
-    public List<IntVector2D> getWinningMoveSet(ReadWriteBoard board) {
+    public List<IntVector2D> getWinningMoveSet(PlayableBoard board) {
         List<IntVector2D> winningMoveSet = new ArrayList<>();
         getMaxMoveScore(board, winningMoveSet);
         Collections.reverse(winningMoveSet);
         return winningMoveSet;
     }
 
-    private int getMaxMoveScore(ReadWriteBoard boardToUse, List<IntVector2D> outputMoveList) {
+    private int getMaxMoveScore(PlayableBoard boardToUse, List<IntVector2D> outputMoveList) {
         return getMaxMoveScore(boardToUse, null, outputMoveList);
     }
 
-    private int getMaxMoveScore(ReadWriteBoard board, @Nullable IntVector2D pos, List<IntVector2D> outputMoveList) {
+    private int getMaxMoveScore(PlayableBoard board, @Nullable IntVector2D pos, List<IntVector2D> outputMoveList) {
         int moveScore = 0;
         if (pos != null) {
             moveScore = board.popCell(pos);

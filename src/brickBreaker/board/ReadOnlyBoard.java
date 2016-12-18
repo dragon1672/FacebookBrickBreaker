@@ -46,4 +46,10 @@ public interface ReadOnlyBoard {
      * @return the board
      */
     String getBoardString();
+
+    /**
+     * Get a handle to the board's columns
+     * @return readonly board columns
+     */
+    Iterable<Iterable<Color>> getColumns();
 }

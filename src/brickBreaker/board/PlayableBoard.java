@@ -3,9 +3,9 @@ package brickBreaker.board;
 import utils.IntVector2D;
 
 /**
- * Playable Board
+ * Playable BoardImpl
  */
-public interface ReadWriteBoard extends ReadOnlyBoard {
+public interface PlayableBoard extends ReadOnlyBoard {
     /**
      * modifies board and pops adjacent cells. NO-Op if invalid move
      *
@@ -20,5 +20,5 @@ public interface ReadWriteBoard extends ReadOnlyBoard {
      *
      * @return copy of current board
      */
-    ReadWriteBoard duplicate();
+    PlayableBoard duplicate();
 }

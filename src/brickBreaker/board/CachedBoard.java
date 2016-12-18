@@ -10,12 +10,12 @@ import java.util.stream.Stream;
 /**
  * Saves Expensive Calls
  */
-public class CachedBoard implements ReadWriteBoard {
+public class CachedBoard implements PlayableBoard {
 
-    private final ReadWriteBoard backbone;
+    private final PlayableBoard backbone;
     private final Cache cache = new Cache();
 
-    public CachedBoard(ReadWriteBoard backbone) {
+    public CachedBoard(PlayableBoard backbone) {
         this.backbone = backbone;
     }
 
@@ -27,7 +27,7 @@ public class CachedBoard implements ReadWriteBoard {
     }
 
     @Override
-    public ReadWriteBoard duplicate() {
+    public PlayableBoard duplicate() {
         return backbone.duplicate();
     }
 
@@ -54,6 +54,11 @@ public class CachedBoard implements ReadWriteBoard {
     @Override
     public String getBoardString() {
         return backbone.getBoardString();
+    }
+
+    @Override
+    public Iterable<Iterable<Color>> getColumns() {
+        return backbone.getColumns();
     }
 
     /**
