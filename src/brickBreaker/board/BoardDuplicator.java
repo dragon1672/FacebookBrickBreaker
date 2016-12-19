@@ -5,6 +5,6 @@ package brickBreaker.board;
  */
 public class BoardDuplicator {
     public static PlayableBoard duplicate(ReadOnlyBoard input) {
-        return new BoardImpl(input);
+        return new CachedBoard(new BoardImpl(input));
     }
 }
