@@ -1,10 +1,12 @@
 package brickBreaker;
 
 import brickBreaker.ai.AI;
+import brickBreaker.ai.FirstPathNonRecursive;
 import brickBreaker.ai.RecursiveFirstPath;
-import brickBreaker.ai.RecursiveBoardHeuristic;
 import brickBreaker.board.*;
 import utils.IntVector2D;
+import utils.Tuple;
+import utils.Tuple.Tuple2;
 
 import java.io.IOException;
 import java.util.List;
@@ -75,7 +77,7 @@ public class Driver {
         if(ai1Score > ai2Score) winner = -1;
         if(ai1Score < ai2Score) winner = 1;
         String winnerStr = winner == 0 ? "tie" : winner > 0 ? "2" : "1";
-        System.out.printf("Winner: %s, score Ai1: %s, Ai2: %s\n",winnerStr,ai1Score,ai2Score);
+        System.out.printf("Winner: %s, score Ai1: %s, Ai2: %s Diff: %s\n",winnerStr,ai1Score,ai2Score, Math.abs(ai1Score-ai2Score));
         return winner;
     }
 
@@ -86,18 +88,27 @@ public class Driver {
             overallWinner += battleAI(board,ai1,ai2);
         }
         String overallWinnerString =  overallWinner == 0 ? "tie" : overallWinner > 0 ? "2" : "1";
-        System.out.println("Overall Winner");
+        System.out.printf("Overall Winner: %s, with %s more wins\n\n",overallWinnerString,Math.abs(overallWinner));
     }
 
     private static void battleAI_main() throws IOException {
-        AI ai1 = new RecursiveFirstPath();
-        AI ai2 = new RecursiveBoardHeuristic();
+        Tuple2<AI,AI> AIs;
+        //AIs = Tuple.of(new RecursiveFirstPath(),new RecursiveBoardHeuristic());
+        AIs = Tuple.of(new RecursiveFirstPath(),new FirstPathNonRecursive());
+        AIs = Tuple.of(new FirstPathNonRecursive(),new RecursiveFirstPath());
 
-        //PlayableBoard board = new BoardGenerator().generateFromString(getStaticBoardString()).getAsPlayableBoard();
-        //PlayableBoard board = new BoardGenerator().generateFromImage("Capture.png",10,10).getAsPlayableBoard();
+        /* Toggle between pre-defined board and battle with random
 
-        //battleAI(board, ai1,ai2);
-        battleAI(ai1,ai2,5);
+        PlayableBoard board;
+        BoardGenerator boardGenerator = new BoardGenerator();
+        boardGenerator.generateFromString(getStaticBoardString());
+        boardGenerator.generateFromImage("Capture.png",10,10);
+        boardGenerator.generateRandomBoard(10,10);
+        battleAI(boardGenerator.getAsPlayableBoard(), AIs.getFirst(),AIs.getSecond());
+
+        /*/
+        battleAI(AIs.getFirst(),AIs.getSecond(),10);
+        //*/
     }
 
     public static void mainTester() throws IOException {
