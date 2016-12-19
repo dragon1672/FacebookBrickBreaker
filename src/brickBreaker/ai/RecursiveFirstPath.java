@@ -14,7 +14,7 @@ import java.util.Stack;
  * Try out each possible move ordered by points
  * (Press the largest group and undo if that didn't work until it works)
  */
-public class QuickAI extends AI {
+public class RecursiveFirstPath extends AI {
     @Override
     public List<IntVector2D> getWinningMoveSet(ReadOnlyBoard board) {
         Stack<IntVector2D> winningMoveSet = new Stack<>();

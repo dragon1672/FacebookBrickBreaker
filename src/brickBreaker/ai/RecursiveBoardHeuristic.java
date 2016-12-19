@@ -15,7 +15,7 @@ import java.util.Stack;
 /**
  * Sorts proposed moved based off improved board heuristic
  */
-public class QuickyBoardHuristic extends AI {
+public class RecursiveBoardHeuristic extends AI {
     private static int boardHeuristicMovePoints(ReadOnlyBoard board) {
         return getAllPossibleMovesMap(board).values().stream().reduce((integer, integer2) -> integer + integer2).orElse(-1);
     }

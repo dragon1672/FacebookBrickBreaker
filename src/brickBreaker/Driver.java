@@ -1,8 +1,8 @@
 package brickBreaker;
 
 import brickBreaker.ai.AI;
-import brickBreaker.ai.QuickAI;
-import brickBreaker.ai.QuickyBoardHuristic;
+import brickBreaker.ai.RecursiveFirstPath;
+import brickBreaker.ai.RecursiveBoardHeuristic;
 import brickBreaker.board.*;
 import utils.IntVector2D;
 
@@ -90,8 +90,8 @@ public class Driver {
     }
 
     private static void battleAI_main() throws IOException {
-        AI ai1 = new QuickAI();
-        AI ai2 = new QuickyBoardHuristic();
+        AI ai1 = new RecursiveFirstPath();
+        AI ai2 = new RecursiveBoardHeuristic();
 
         //PlayableBoard board = new BoardGenerator().generateFromString(getStaticBoardString()).getAsPlayableBoard();
         //PlayableBoard board = new BoardGenerator().generateFromImage("Capture.png",10,10).getAsPlayableBoard();
@@ -101,7 +101,7 @@ public class Driver {
     }
 
     public static void mainTester() throws IOException {
-        AI ai = new QuickAI();
+        AI ai = new RecursiveFirstPath();
 
         BoardGenerator boardGenerator = new BoardGenerator();
 
