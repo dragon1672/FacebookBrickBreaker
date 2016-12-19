@@ -83,10 +83,11 @@ public class FirstPathNonRecursive extends AI {
 
     @Override
     public List<IntVector2D> getWinningMoveSet(ReadOnlyBoard originalBoard) {
-        //PriorityQueue<MovePossibility> possibleMoves = new PriorityQueue<>(Comparator.comparingInt(o -> o.score));
+        // can I thread this somehow?
         SortedSet<MovePossibility> possibleMoves = new TreeSet<>(Comparator.comparingInt(o -> o.boardHeuristic));
         possibleMoves.addAll(getAllMoves(originalBoard).collect(Collectors.toList()));
         while(!possibleMoves.isEmpty()) {
+            // calling .first() or .last() wasn't giving me the proper sorted item :(
             MovePossibility possibleMove = possibleMoves.stream().findFirst().orElse(null);
             possibleMoves.remove(possibleMove);
 
