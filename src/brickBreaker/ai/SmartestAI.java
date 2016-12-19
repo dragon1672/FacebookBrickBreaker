@@ -2,6 +2,7 @@ package brickBreaker.ai;
 
 import brickBreaker.board.BoardDuplicator;
 import brickBreaker.board.PlayableBoard;
+import brickBreaker.board.ReadOnlyBoard;
 import com.sun.istack.internal.Nullable;
 import utils.IntVector2D;
 
@@ -14,9 +15,9 @@ import java.util.*;
 @SuppressWarnings("unused")
 class SmartestAI extends AI {
     @Override
-    public List<IntVector2D> getWinningMoveSet(PlayableBoard board) {
+    public List<IntVector2D> getWinningMoveSet(ReadOnlyBoard board) {
         List<IntVector2D> winningMoveSet = new ArrayList<>();
-        getMaxMoveScore(board, winningMoveSet);
+        getMaxMoveScore(BoardDuplicator.duplicate(board), winningMoveSet);
         Collections.reverse(winningMoveSet);
         return winningMoveSet;
     }

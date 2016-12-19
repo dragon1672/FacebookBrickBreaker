@@ -2,6 +2,7 @@ package brickBreaker.ai;
 
 import brickBreaker.board.BoardDuplicator;
 import brickBreaker.board.PlayableBoard;
+import brickBreaker.board.ReadOnlyBoard;
 import utils.IntVector2D;
 
 import java.util.List;
@@ -15,9 +16,9 @@ import java.util.Stack;
  */
 public class QuickAI extends AI {
     @Override
-    public List<IntVector2D> getWinningMoveSet(PlayableBoard board) {
+    public List<IntVector2D> getWinningMoveSet(ReadOnlyBoard board) {
         Stack<IntVector2D> winningMoveSet = new Stack<>();
-        if (getWinningMoveSet(board, winningMoveSet)) {
+        if (getWinningMoveSet(BoardDuplicator.duplicate(board), winningMoveSet)) {
             return winningMoveSet;
         }
         throw new IllegalArgumentException("provided board is unsolvable");
