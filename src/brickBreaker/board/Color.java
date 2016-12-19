@@ -53,6 +53,10 @@ public enum Color {
         return values()[1 + rand.nextInt(values().length - 1)];
     }
 
+    public static Color randomFrom(Color ... list) {
+        return list[1 + rand.nextInt(list.length - 1)];
+    }
+
     public static Color fromRGB(int rgb) {
         return Arrays.stream(values())
                 .filter(color -> color.RBGValues.contains(rgb))

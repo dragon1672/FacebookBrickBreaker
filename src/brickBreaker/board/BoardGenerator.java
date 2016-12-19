@@ -135,7 +135,10 @@ public class BoardGenerator {
      */
     @SuppressWarnings({"unused","WeakerAccess","SameParameterValue"})
     public BoardGenerator generateRandomBoard(int width, int height) {
-        Supplier<List<Color>> randomColumnGenerator = ()->Stream.generate(Color::random)
+        return generateRandomBoard(width,height,Color.RED,Color.GREEN,Color.YELLOW,Color.INDIGO);
+    }
+    public BoardGenerator generateRandomBoard(int width, int height, Color ... possibleColors) {
+        Supplier<List<Color>> randomColumnGenerator = ()->Stream.generate(()->Color.randomFrom(possibleColors))
                 .limit(height)
                 .collect(Collectors.toList());
         List<List<Color>> generatedList = Stream.generate(randomColumnGenerator)
